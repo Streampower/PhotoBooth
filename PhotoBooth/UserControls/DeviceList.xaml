@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="PhotoBooth.Controls.DeviceList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhotoBooth.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid Margin="120,120,56,32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="People list" Style="{StaticResource HeaderTextBlockStyle}"
+               Margin="0,0,0,20"/>
+        <GridView Grid.Row="1" ItemsSource="{Binding}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="120" Width="120" Source="{Binding ImageUri}" />
+                        <TextBlock>
+                        <Run Text="{Binding FirstName}" />
+                        <Run Text="{Binding LastName}" />
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
+</UserControl>
