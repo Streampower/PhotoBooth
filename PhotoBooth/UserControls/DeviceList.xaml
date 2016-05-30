@@ -1,8 +1,7 @@
 ﻿<UserControl
-    x:Class="PhotoBooth.Controls.DeviceList"
+    x:Class="PhotoBooth.UserControls.DeviceList"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:PhotoBooth.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -10,12 +9,14 @@
     d:DesignWidth="400">
 
     <Grid Margin="12">
-        <ListView ItemsSource="{Binding}">
+        <ListView ItemsSource="{Binding}"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  HorizontalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="5,5,5,10">
-                        <Image Height="50" Width="50" Source="{Binding ImageUri}" />
-                        <StackPanel>
+                        <Image Height="50" Width="50" Source="{Binding ImageSource}" />
+                        <StackPanel VerticalAlignment="Center">
                             <TextBlock Text="{Binding Maker}"
                                        Style="{StaticResource BodyTextBlockStyle}"
                                        FontWeight="Bold" />

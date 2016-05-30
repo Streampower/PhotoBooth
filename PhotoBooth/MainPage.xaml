@@ -6,7 +6,7 @@
     xmlns:local="using:PhotoBooth"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="using:PhotoBooth.Controls"
+    xmlns:userControls="using:PhotoBooth.UserControls"
     mc:Ignorable="d">
 
     <Page.BottomAppBar>
@@ -19,10 +19,13 @@
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <controls:DeviceList DataContext="{Binding Devices}" />
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <userControls:DeviceList Grid.Column="0"
+                                 DataContext="{Binding Devices}"/>
+        <userControls:ImageGallery Grid.Column="1"
+                                   DataContext="{Binding Images}"/>
     </Grid>
-
-    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>-->
 </Page>

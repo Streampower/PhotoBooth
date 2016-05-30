@@ -6,6 +6,6 @@ namespace PhotoBooth.Model
     {
         public string Maker { get; set; }
         public string Model { get; set; }
-        public Uri ImageUri { get; set; }
+        public Uri ImageSource { get; set; }
     }
 }

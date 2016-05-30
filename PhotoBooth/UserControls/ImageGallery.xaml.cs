@@ -4,9 +4,9 @@
 
 namespace PhotoBooth.UserControls
 {
-    public sealed partial class DeviceList : UserControl
+    public sealed partial class ImageGallery : UserControl
     {
-        public DeviceList()
+        public ImageGallery()
         {
             InitializeComponent();
         }
