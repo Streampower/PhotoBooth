@@ -9,25 +9,22 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid Margin="120,120,56,32">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <TextBlock Text="People list" Style="{StaticResource HeaderTextBlockStyle}"
-               Margin="0,0,0,20"/>
-        <GridView Grid.Row="1" ItemsSource="{Binding}">
-            <GridView.ItemTemplate>
+    <Grid Margin="12">
+        <ListView ItemsSource="{Binding}">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="120" Width="120" Source="{Binding ImageUri}" />
-                        <TextBlock>
-                        <Run Text="{Binding FirstName}" />
-                        <Run Text="{Binding LastName}" />
-                        </TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,5,10">
+                        <Image Height="50" Width="50" Source="{Binding ImageUri}" />
+                        <StackPanel>
+                            <TextBlock Text="{Binding Maker}"
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                       FontWeight="Bold" />
+                            <TextBlock Text="{Binding Model}"
+                                   Style="{StaticResource BodyTextBlockStyle}" />
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
-            </GridView.ItemTemplate>
-        </GridView>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>
